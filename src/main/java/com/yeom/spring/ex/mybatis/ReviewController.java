@@ -10,13 +10,14 @@ import com.yeom.spring.ex.mybatis.domain.Review;
 import com.yeom.spring.ex.mybatis.service.ReviewService;
 
 @Controller
+@RequestMapping("/mybatis/review")
 public class ReviewController {
 
 	@Autowired
 	private ReviewService reviewService;
 	
 	// Parameter로 전달받은 id와 일치하는 리뷰 정보를 json으로 Response 담는다
-	@RequestMapping("/mybatis/review")
+	@RequestMapping("/")
 	@ResponseBody
 	public Review review(@RequestParam("id")int id) {
 		// request Parameter
@@ -25,5 +26,19 @@ public class ReviewController {
 		
 		return review;
 	}
+	
+	// 리뷰 정보를 저장하는 페이지
+	@RequestMapping("/create")
+	@ResponseBody
+	public String createReview() {
+		
+		// 4. 치즈피자, 염재현, 4.5, 치즈피자 존맛~
+		int count = reviewService.addReview(4, "치즈피자", "염재현", 4.5, "치즈피자 존맛!");
+		
+		// 입력 개수 : 1 
+		return "입력 개수 : " + count;
+		
+	}
+	
 	
 }
