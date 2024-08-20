@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.yeom.spring.ex.mvc.mvctest.domain.Users;
 
 @Mapper
-public interface UserRepository {
+public interface UsersRepository {
 
 	public int insertUser(Users users);
 	

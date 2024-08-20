@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.yeom.spring.ex.mvc.mvctest.Servicetest.UserService;
+import com.yeom.spring.ex.mvc.mvctest.Servicetest.UsersService;
 import com.yeom.spring.ex.mvc.mvctest.domain.Users;
 
 @Controller
 @RequestMapping("/mvctest/user2")
-public class UserController {
+public class UsersController {
 	
 	@Autowired
-	private UserService userService;
+	private UsersService userService;
 	
 	@PostMapping("/create")
 	public String createUser(

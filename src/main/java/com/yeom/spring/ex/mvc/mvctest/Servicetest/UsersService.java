@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yeom.spring.ex.mvc.mvctest.domain.Users;
-import com.yeom.spring.ex.mvc.mvctest.repositorytest.UserRepository;
+import com.yeom.spring.ex.mvc.mvctest.repositorytest.UsersRepository;
 
 @Service
-public class UserService {
+public class UsersService {
 
 	@Autowired
-	private UserRepository userRepository;
+	private UsersRepository userRepository;
 	
 	public int addUser(Users users) {
 		int count = userRepository.insertUser(users);
