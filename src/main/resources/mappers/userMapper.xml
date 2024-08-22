@@ -57,5 +57,13 @@
  			, #{introduce}
  		)
  	</insert>
+ 	<select id="selectCountByEmail" >
+ 		SELECT
+ 			count(*)
+ 		FROM
+ 			`new_user`
+ 		WHERE
+ 			`email` = #{email}
+ 	</select>
  	
  </mapper>
